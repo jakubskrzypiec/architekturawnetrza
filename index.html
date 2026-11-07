@@ -98,6 +98,93 @@
     @media(max-width:800px){.container{width:calc(100% - 40px)}.header-inner,.hero-content{width:calc(100% - 40px)}.site-header{position:absolute}.header-inner{min-height:76px}.menu-toggle{display:flex;z-index:85}.nav-links{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:24px;padding:85px 35px;background:#24201d;color:#fff;transform:translateX(101%);transition:transform .4s ease}.nav-links.is-open{transform:translateX(0)}.nav-links a{font-size:18px}.nav-links .nav-contact{font-size:13px;margin-top:10px}.site-header.scrolled .nav-links{color:#fff}.site-header:has(.is-open) .menu-toggle{color:#fff}.hero{height:790px;min-height:690px;max-height:100svh}.hero-image{background-position:58% center}.hero h1{font-size:clamp(48px,10vw,77px);max-width:630px}.hero-content{padding-bottom:95px}.hero-intro{display:block}.hero-intro p{font-size:13px;margin-bottom:26px}.hero-bottom{left:20px;right:20px;bottom:18px;font-size:8px}.about{padding:95px 0}.about-grid{grid-template-columns:1fr;gap:45px}.about h2{margin-bottom:25px}.portrait{height:490px;max-height:none;max-width:570px}.quote-banner{min-height:390px}.projects{padding:100px 0}.projects-header{align-items:start}.projects-subhead{max-width:200px}.projects-header h2{font-size:50px}.project-card{width:290px}.project-photo{height:390px}.offer{padding:100px 0}.offer-head{display:block}.offer-head .section-title{margin-bottom:25px}.offer-grid{grid-template-columns:1fr 1fr}.offer-card:last-child{grid-column:1/-1}.offer-card{min-height:390px}.offer-card .material{height:135px}.process{grid-template-columns:1fr}.process-art{height:500px}.process-copy{padding:75px 40px}.review-grid{grid-template-columns:1fr;gap:12px}.review{min-height:215px}.testimonials{padding:100px 0}.contact{padding:100px 0 75px}.contact-grid{grid-template-columns:1fr;gap:60px}.social-row{margin-top:55px}}
     @media(max-width:520px){.brand-mark{font-size:26px}.brand-name{font-size:8px;letter-spacing:.14em}.brand-caption{font-size:7px}.hero{min-height:720px;max-height:none;height:92svh}.hero-image{background-position:55% center}.hero h1{font-size:clamp(44px,12.5vw,63px)}.hero .eyebrow{font-size:9px}.hero-content{padding-bottom:100px}.hero-actions{gap:9px}.btn{min-width:0;padding:16px 15px;font-size:9px}.hero-bottom .scroll-label{display:none}.about h2,.section-title{font-size:clamp(39px,10vw,53px)}.about p{font-size:13px}.portrait{height:440px}.quote-content h2{font-size:33px}.projects-header{display:block}.projects-subhead{margin-top:24px}.project-card{width:260px}.project-photo{height:350px}.project-controls{margin-top:20px}.offer-head .section-title{font-size:44px}.offer-grid{grid-template-columns:1fr}.offer-card:last-child{grid-column:auto}.offer-card{min-height:390px}.offer-card .material{height:130px}.process-art{height:390px}.process-copy{padding:70px 25px}.process-copy h2{font-size:45px}.testimonials{padding:85px 0}.reviews-head h2{font-size:43px}.contact-left h2{font-size:60px}.contact-form{grid-template-columns:1fr}.field.full{grid-column:1}.form-bottom{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:22px}.send-btn{width:100%}.social-row{flex-wrap:wrap}.footer-top{flex-direction:column;align-items:flex-start}.footer-bottom{flex-direction:column}.footer-nav{gap:15px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-image,.shadow-layer,.light-beam,.quote-banner .banner-photo,.process-art-img,.process-art:before,.portrait:before{animation:none!important}.reveal{opacity:1;transform:none;transition:none}.nav-links{transition:none}}
+  
+/* --- KIERUNEK V2: Smoky Black · Olive Drab · Bone · Floral White --- */
+:root{
+ --ink:#11120D;--white:#fff;--paper:#FFFBF4;--travertine:#D8CFBC;
+ --sand:#D8CFBC;--smoke:#11120D;--oak:#565449;--olive:#565449;
+ --brass:#565449;--line:rgba(17,18,13,.16);--head:'Manrope',Arial,sans-serif;
+}
+body{background:#FFFBF4;color:#11120D}
+.site-header.scrolled{background:rgba(255,251,244,.97);color:#11120D;--nav-c:#11120D}
+.hero{height:100svh;max-height:1200px;min-height:650px;background:#11120D}
+.hero-image{background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2400&q=90');filter:brightness(.84) saturate(.67);background-position:center 55%}
+.hero:after{background:linear-gradient(180deg,rgba(0,0,0,.36),transparent 30%,transparent 60%,rgba(0,0,0,.22))}
+.hero .shadow-layer{opacity:1;filter:blur(27px);background:repeating-linear-gradient(110deg,transparent 0 11%,rgba(0,0,0,.68) 14% 19%,transparent 21% 32%);animation-duration:17s}
+.hero .light-beam{opacity:.8;animation-duration:16s}
+.hero-content-minimal{display:flex;align-items:flex-end;justify-content:flex-start;padding-bottom:clamp(65px,11vh,145px)}
+.hero-content-minimal .hero-actions{display:flex;align-items:center;gap:14px}
+.hero-content-minimal .btn{min-width:200px;font-size:10px;padding:19px 24px}
+.hero-content-minimal .btn-outline{background:rgba(0,0,0,.12)}
+.about{background:#FFFBF4;padding:135px 0}
+.about-grid{grid-template-columns:1fr .92fr;gap:clamp(50px,8vw,150px)}
+.about-copy h2{font-family:'Montserrat',Arial,sans-serif;font-size:clamp(62px,7vw,125px);font-weight:500;line-height:1;letter-spacing:-.068em;text-transform:uppercase;margin:0 0 43px}
+.about-copy p{font-size:14px;color:#11120D;max-width:570px}
+.portrait{background:#fff;box-shadow:none;height:580px;border:1px solid rgba(17,18,13,.07)}
+.portrait:before{display:none}.portrait-label{color:#11120D;border:0;font-size:11px;letter-spacing:.13em}
+.quote-banner{min-height:500px;background:#565449}
+.quote-banner .banner-photo{filter:brightness(.58) saturate(.57);background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=90')}
+.quote-banner .shadow-layer{filter:blur(33px);opacity:.9}
+.quote-content h2{font-size:clamp(27px,3.5vw,52px);letter-spacing:-.045em;font-weight:400}
+.projects{background:#11120D;color:#fff;padding:110px 0 130px}
+.projects-header{align-items:flex-end;justify-content:space-between;margin-bottom:50px}
+.projects-header h2{margin:0;font-size:clamp(55px,7.4vw,118px);line-height:.98;font-weight:500;letter-spacing:-.075em}
+.projects-subhead{font-size:12px;max-width:275px;margin-bottom:0}
+.marquee-track{gap:12px}
+.project-card{position:relative;width:clamp(290px,25vw,435px);height:clamp(380px,31vw,520px);overflow:hidden;background:#fff;color:#11120D}
+.project-photo{width:100%;height:100%;background:#fff!important;border:0}
+.project-photo:after{display:none}
+.project-meta{position:absolute;left:0;right:0;bottom:0;margin:0;padding:23px 20px 21px;border:0;background:transparent;display:flex;align-items:flex-end;gap:15px}
+.project-meta h3{font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:0;color:#11120D;margin:0 0 3px}
+.project-meta span{font-size:9px;font-weight:600;letter-spacing:.08em;color:#11120D}
+.project-meta .project-category{font-size:14px;letter-spacing:-.04em;font-weight:700;text-transform:none}
+.project-card:hover .project-meta{background:rgba(216,207,188,.18)}
+.offer{background:#FFFBF4;padding:135px 0 145px}
+.offer-new-head{margin-bottom:55px}.offer-new-head h2{font-family:var(--head);font-size:clamp(65px,7vw,110px);font-weight:400;letter-spacing:-.075em;line-height:1;margin:15px 0 0}
+.offer-split{display:grid;grid-template-columns:1fr 1fr;min-height:675px}
+.offer-visual{position:relative;isolation:isolate;overflow:hidden;background:#565449 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85') center/cover no-repeat}
+.offer-visual:after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.24);z-index:-1}
+.offer-visual-shadow{position:absolute;inset:-20%;z-index:0;pointer-events:none;background:repeating-linear-gradient(125deg,transparent 0 24%,rgba(0,0,0,.34) 27% 32%,transparent 35% 47%);filter:blur(28px);animation:travelShadows 18s ease-in-out infinite alternate}
+.offer-visual>span{position:absolute;bottom:30px;left:42px;color:#fff;font-size:10px;letter-spacing:.2em;font-weight:600;z-index:1}
+.offer-lines{padding:clamp(55px,6vw,90px) clamp(40px,6vw,100px);background:#D8CFBC;display:flex;flex-direction:column;justify-content:center;color:#11120D}
+.offer-lines-intro{margin-bottom:25px}
+.offer-lines-intro p{max-width:435px;font-size:13px;margin:16px 0 0;line-height:1.8}
+.offer-line{border-top:1px solid rgba(17,18,13,.27);padding:24px 0;display:grid;grid-template-columns:48px 1fr 20px;gap:14px;align-items:center;transition:padding-left .25s}
+.offer-line:last-of-type{border-bottom:1px solid rgba(17,18,13,.27)}
+.offer-line:hover{padding-left:10px}
+.offer-line .offer-no{font-size:11px;font-weight:700}
+.offer-line h3{font-family:var(--head);font-size:clamp(17px,1.8vw,28px);font-weight:500;letter-spacing:-.04em;margin:0;line-height:1.25}
+.offer-line>span:last-child{font-size:21px}
+.offer-lines>.line-link{align-self:flex-start;margin-top:25px}
+.process{background:#11120D}.process-art{background:#565449}
+.process-art-img{background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=90');background-position:60% center;filter:brightness(.7) saturate(.55)}
+.process-copy{background:#565449;color:#fff}
+.process-list li{border-color:rgba(255,255,255,.3)}
+.testimonials{background:#FFFBF4;padding:135px 0}
+.testimonials:before,.testimonials:after{display:none}
+.review-grid{gap:17px}.review{background:#D8CFBC;border:none;min-height:305px;color:#11120D}
+.review blockquote{font-size:clamp(15px,1.5vw,19px)}
+.contact{background:#D8CFBC;color:#11120D}
+.contact-left h2{font-weight:400}
+.contact-details a{color:#11120D}
+.site-footer{background:#11120D}
+.social-showcase{display:grid;grid-template-columns:1.02fr .98fr;min-height:620px;background:#FFFBF4}
+.social-copy{padding:clamp(70px,8vw,145px) clamp(45px,8vw,140px);align-self:center}
+.social-copy h2{font-family:var(--head);font-size:clamp(45px,5vw,78px);line-height:1.15;font-weight:400;letter-spacing:-.065em;margin:22px 0}
+.social-copy p{font-size:13px;max-width:420px;margin-bottom:32px}
+.social-links{max-width:460px}
+.social-item{border-top:1px solid rgba(17,18,13,.4);padding:22px 0;display:grid;grid-template-columns:34px 1fr 24px;gap:10px;align-items:center;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.13em}
+.social-item:last-child{border-bottom:1px solid rgba(17,18,13,.4)}
+.social-logo{font-size:23px;font-family:Arial,sans-serif;font-weight:500}
+.social-arrow{font-size:23px;text-align:right}
+.social-note{display:block;margin-top:22px;font-size:10px;letter-spacing:.05em}
+.social-picture{min-height:550px;position:relative;overflow:hidden;background:#565449 url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1500&q=86') center/cover no-repeat}
+.social-picture-shadow{position:absolute;inset:-15%;background:repeating-linear-gradient(110deg,transparent 0 13%,rgba(0,0,0,.4) 17% 22%,transparent 25% 38%);opacity:.6;filter:blur(20px);animation:travelShadows 19s ease-in-out infinite alternate}
+@media(max-width:900px){.offer-split{grid-template-columns:1fr}.offer-visual{min-height:430px}.offer-lines{padding:60px 40px}.social-showcase{grid-template-columns:1fr}.social-picture{min-height:400px}.social-copy{padding:75px 40px}}
+@media(max-width:800px){.about{padding:90px 0}.portrait{height:420px}.projects-header{display:block}.projects-header h2{font-size:clamp(49px,9vw,80px)}.projects-subhead{margin-top:22px}.project-card{width:290px;height:390px}.offer{padding:100px 0}.process-art-img{background-position:60% center}}
+@media(max-width:520px){.hero-content-minimal{padding-bottom:70px}.hero-content-minimal .hero-actions{gap:9px}.hero-content-minimal .btn{min-width:0;padding:16px 15px;font-size:9px}.about-copy h2{font-size:62px}.portrait{height:355px}.quote-banner{min-height:375px}.projects{padding:90px 0}.projects-header h2{font-size:50px}.project-card{width:255px;height:345px}.project-meta{padding:16px 12px}.project-meta .project-category{font-size:12px}.offer-visual{min-height:370px}.offer-lines{padding:52px 24px}.offer-line{grid-template-columns:33px 1fr 18px;gap:8px}.offer-line h3{font-size:20px}.social-copy{padding:70px 24px}.social-copy h2{font-size:52px}.social-picture{min-height:350px}}
+@media(prefers-reduced-motion:reduce){.offer-visual-shadow,.social-picture-shadow{animation:none!important}}
+
   </style>
 </head>
 <body>
@@ -116,62 +203,66 @@
  </div>
 </header>
 <main id="main">
-<section class="hero" id="start" aria-labelledby="hero-title">
-  <div class="hero-image" aria-hidden="true"></div><div class="light-beam" aria-hidden="true"></div><div class="shadow-layer" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="eyebrow">Autorska pracownia projektowa&nbsp; / &nbsp;Białystok</div>
-    <h1 id="hero-title">Przestrzeń,<br>która ma znaczenie.</h1>
-    <div class="hero-intro">
-      <p>Projektuję wnętrza o prostej, czytelnej formie, przemyślanej funkcjonalności i nowoczesnym stylu. Indywidualnie. Od pierwszej rozmowy po ostatni detal.</p>
-      <div class="hero-actions"><a class="btn" href="#realizacje">Zobacz realizacje <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#kontakt">Skontaktuj się <span aria-hidden="true">↗</span></a></div>
-    </div>
+<section class="hero" id="start" aria-label="Architektura i Wnętrza — prezentacja pracowni">
+ <div class="hero-image" aria-hidden="true"></div>
+ <div class="light-beam" aria-hidden="true"></div>
+ <div class="shadow-layer" aria-hidden="true"></div>
+ <div class="hero-content hero-content-minimal">
+  <div class="hero-actions">
+   <a class="btn" href="#realizacje">Zobacz realizacje <span aria-hidden="true">↗</span></a>
+   <a class="btn btn-outline" href="#kontakt">Skontaktuj się <span aria-hidden="true">↗</span></a>
   </div>
-  <div class="hero-bottom"><span><span class="scroll-line"></span><span class="scroll-label">Przewiń, aby odkryć więcej</span></span><span>01 / 07</span></div>
+ </div>
 </section>
 <section class="about" id="o-mnie" aria-labelledby="about-heading">
-  <div class="container about-grid">
-    <div class="about-copy reveal"><div class="eyebrow">01 / O mnie</div><h2 id="about-heading">Wnętrza tworzone<br>z myślą o ludziach.</h2>
-    <p>Nazywam się Monika Kowalewska. Jestem absolwentką Wydziału Architektury i Urbanistyki Politechniki Białostockiej. Prowadzę autorską pracownię zajmującą się kompleksowym projektowaniem wnętrz.</p>
-    <p>Każdy projekt to dla mnie nowa historia i wyzwanie, do którego podchodzę z ogromnym zaangażowaniem. Łączę kreatywne podejście ze zrozumieniem oczekiwań klienta, dbając o funkcjonalność, estetykę i jakość rozwiązań.</p>
-    <a href="#kontakt" class="line-link">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="portrait reveal" role="img" aria-label="Miejsce na portret projektantki Moniki Kowalewskiej"><div class="portrait-label">Miejsce na zdjęcie<br>Moniki Kowalewskiej</div><span class="portrait-number">ARCHITEKTURA & WNĘTRZA</span></div>
+ <div class="container about-grid">
+  <div class="about-copy reveal">
+   <h2 id="about-heading">O mnie</h2>
+   <p>Nazywam się Monika Kowalewska. Jestem absolwentką Wydziału Architektury i Urbanistyki Politechniki Białostockiej. Prowadzę autorską pracownię zajmującą się kompleksowym projektowaniem wnętrz.</p>
+   <p>Każdy projekt to dla mnie nowa historia i wyzwanie, do którego podchodzę z zaangażowaniem. Łączę kreatywne podejście ze zrozumieniem potrzeb klientów, dbając o funkcjonalność, estetykę i jakość rozwiązań.</p>
   </div>
+  <div class="portrait reveal" role="img" aria-label="Tutaj będzie zdjęcie Moniki Kowalewskiej">
+   <span class="portrait-label">Tu będzie zdjęcie klientki</span>
+  </div>
+ </div>
 </section>
 <section class="quote-banner" aria-label="Filozofia projektowania">
   <div class="banner-photo" aria-hidden="true"></div><div class="shadow-layer" aria-hidden="true"></div>
   <div class="quote-content reveal"><div class="eyebrow">Dobrze zaprojektowana przestrzeń</div><h2>Piękno ma sens wtedy,<br>gdy idzie w parze z funkcją.</h2><span class="eyebrow">Estetyka &nbsp;—&nbsp; funkcjonalność &nbsp;—&nbsp; detal</span></div>
 </section>
 <section class="projects" id="realizacje" aria-labelledby="projects-heading">
-  <div class="container projects-header reveal">
-    <div><div class="eyebrow">02 / Portfolio</div><h2 id="projects-heading">Wybrane realizacje.</h2></div>
-    <p class="projects-subhead">Przestrzenie prywatne i komercyjne. Karuzela pracuje w nieskończonej pętli — najedź, aby ją zatrzymać.</p>
+ <div class="container projects-header reveal">
+  <h2 id="projects-heading">Wybrane realizacje.</h2>
+  <p class="projects-subhead">Projekty wnętrz prywatnych i komercyjnych.<br>Najedź, aby zatrzymać galerię.</p>
+ </div>
+ <div class="marquee-viewport" id="projectsViewport" tabindex="0" role="region" aria-label="Zapętlona galeria realizacji, użyj strzałek na klawiaturze lub przeciągnij">
+  <div class="marquee-track" id="projectsTrack">
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 01"></div><div class="project-meta"><div><h3>Projekt 01</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Dom</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 02"></div><div class="project-meta"><div><h3>Projekt 02</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Apartament</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 03"></div><div class="project-meta"><div><h3>Projekt 03</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Dom</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 04"></div><div class="project-meta"><div><h3>Projekt 04</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Komercyjne</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 05"></div><div class="project-meta"><div><h3>Projekt 05</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Apartament</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 06"></div><div class="project-meta"><div><h3>Projekt 06</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Dom</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 07"></div><div class="project-meta"><div><h3>Projekt 07</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Dom</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 08"></div><div class="project-meta"><div><h3>Projekt 08</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Komercyjne</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 09"></div><div class="project-meta"><div><h3>Projekt 09</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Dom</span></div></article>
+   <article class="project-card"><div class="project-photo" aria-label="Puste miejsce na zdjęcie realizacji 10"></div><div class="project-meta"><div><h3>Projekt 10</h3><span>Realizacja do uzupełnienia</span></div><span class="project-category">Dom</span></div></article>
   </div>
-  <div class="marquee-viewport" id="projectsViewport" aria-label="Karuzela realizacji. Wersja koncepcyjna — miejsca na fotografie projektów">
-   <div class="marquee-track" id="projectsTrack">
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Dom / projekt 01</span></div><span class="project-number">01</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Apartament / projekt 02</span></div><span class="project-number">02</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Przestrzeń komercyjna</h3><span>Lokal / projekt 03</span></div><span class="project-number">03</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Mieszkanie / projekt 04</span></div><span class="project-number">04</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Dom / projekt 05</span></div><span class="project-number">05</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Przestrzeń komercyjna</h3><span>Biuro / projekt 06</span></div><span class="project-number">06</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Apartament / projekt 07</span></div><span class="project-number">07</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Mieszkanie / projekt 08</span></div><span class="project-number">08</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Przestrzeń komercyjna</h3><span>Gabinet / projekt 09</span></div><span class="project-number">09</span></div></article>
-    <article class="project-card"><div class="project-photo"><span class="placeholder">Miejsce na realizację</span></div><div class="project-meta"><div><h3>Wnętrze prywatne</h3><span>Dom / projekt 10</span></div><span class="project-number">10</span></div></article>
-   </div>
-  </div>
-  <div class="container" style="display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:30px"><div class="project-note">10 miejsc na fotografie <span aria-hidden="true">—</span> projekty do uzupełnienia</div><div class="project-controls"><button class="round-arrow" id="projectsPrev" type="button" aria-label="Przewiń realizacje w lewo">←</button><button class="round-arrow" id="projectsNext" type="button" aria-label="Przewiń realizacje w prawo">→</button></div></div>
+ </div>
 </section>
 <section class="offer" id="oferta" aria-labelledby="offer-heading">
-  <div class="container">
-    <div class="offer-head reveal"><div><div class="eyebrow">03 / Oferta</div><h2 class="section-title" id="offer-heading">Projekt od pomysłu<br>do ostatniego detalu.</h2></div><p>Każda przestrzeń wymaga innego podejścia. Wybieramy zakres współpracy dopasowany do potrzeb inwestora i charakteru wnętrza.</p></div>
-    <div class="offer-grid">
-      <article class="offer-card reveal"><div class="material" aria-hidden="true"></div><div class="offer-body"><span class="offer-top">01 / Kompleksowo</span><h3>Projektowanie<br>wnętrz</h3><p>Od analizy potrzeb i układu funkcjonalnego przez wizualizacje po szczegółową dokumentację projektu.</p><a href="#kontakt" class="line-link">Zapytaj o ofertę <span aria-hidden="true">↗</span></a></div></article>
-      <article class="offer-card reveal"><div class="material" aria-hidden="true"></div><div class="offer-body"><span class="offer-top">02 / Koncepcja</span><h3>Aranżacja<br>i dobór materiałów</h3><p>Spójna wizja wnętrza, w której światło, kolor, wyposażenie i faktury tworzą przemyślaną całość.</p><a href="#kontakt" class="line-link">Zapytaj o ofertę <span aria-hidden="true">↗</span></a></div></article>
-      <article class="offer-card reveal"><div class="material" aria-hidden="true"></div><div class="offer-body"><span class="offer-top">03 / Realizacja</span><h3>Nadzór<br>autorski</h3><p>Opcjonalna opieka nad realizacją projektu i konsultacje z wykonawcami, by efekt pozostał wierny koncepcji.</p><a href="#kontakt" class="line-link">Zapytaj o ofertę <span aria-hidden="true">↗</span></a></div></article>
-    </div>
+ <div class="container offer-new-head reveal"><span class="eyebrow">03 / Oferta</span><h2 id="offer-heading">Oferta.</h2></div>
+ <div class="offer-split">
+  <div class="offer-visual" role="img" aria-label="Nastrojowe wnętrze w naturalnej kolorystyce"><div class="offer-visual-shadow"></div><span>ARCHITEKTURA & WNĘTRZA</span></div>
+  <div class="offer-lines">
+   <div class="offer-lines-intro"><span class="eyebrow">Projektowanie wnętrz</span><p>Przestrzeń dopasowana do potrzeb, stylu życia i charakteru miejsca — od pierwszego pomysłu po szczegółowe rozwiązania.</p></div>
+   <article class="offer-line"><span class="offer-no">01</span><h3>Projekty wnętrz prywatnych</h3><span aria-hidden="true">↗</span></article>
+   <article class="offer-line"><span class="offer-no">02</span><h3>Projekty wnętrz komercyjnych</h3><span aria-hidden="true">↗</span></article>
+   <article class="offer-line"><span class="offer-no">03</span><h3>Dobór materiałów i wyposażenia</h3><span aria-hidden="true">↗</span></article>
+   <article class="offer-line"><span class="offer-no">04</span><h3>Nadzór autorski</h3><span aria-hidden="true">↗</span></article>
+   <a class="line-link" href="#kontakt">Zapytaj o indywidualną ofertę <span aria-hidden="true">↗</span></a>
   </div>
+ </div>
 </section>
 <section class="process" id="proces" aria-labelledby="process-heading">
   <div class="process-art"><div class="process-art-img" aria-hidden="true"></div><span class="process-art-label">Od wizji do przestrzeni &nbsp;↗</span></div>
@@ -208,9 +299,23 @@
       <div class="form-bottom"><small>Wersja koncepcyjna: wiadomość zostanie przygotowana w Twoim programie pocztowym. Docelowy formularz uruchomimy przed publikacją.</small><button type="submit" class="send-btn">Przygotuj wiadomość <span aria-hidden="true">↗</span></button></div>
     </form>
   </div>
-  <div class="container social-row"><span>Znajdź nas również</span><span class="pending-social" title="Link zostanie dodany po potwierdzeniu profilu">Instagram ↗</span><span class="pending-social" title="Link zostanie dodany po potwierdzeniu profilu">Facebook ↗</span></div>
 </section>
 </main>
+<section class="social-showcase" id="sociale" aria-labelledby="social-heading">
+ <div class="social-copy">
+  <span class="eyebrow">Śledź mnie</span>
+  <h2 id="social-heading">Bądź na bieżąco.</h2>
+  <p>Inspiracje, realizacje i kulisy powstawania nowych przestrzeni.</p>
+  <div class="social-links">
+   <div class="social-item"><span class="social-logo" aria-hidden="true">◎</span><span>Instagram</span><span class="social-arrow" aria-hidden="true">↗</span></div>
+   <div class="social-item"><span class="social-logo" aria-hidden="true">f</span><span>Facebook</span><span class="social-arrow" aria-hidden="true">↗</span></div>
+  </div>
+  <span class="social-note">Linki do profili zostaną uzupełnione.</span>
+ </div>
+ <div class="social-picture" role="img" aria-label="Wizualizacja wnętrza w tonach trawertynu i drewna">
+  <div class="social-picture-shadow" aria-hidden="true"></div>
+ </div>
+</section>
 <footer class="site-footer"><div class="container">
   <div class="footer-top"><a href="#start" class="brand"><span class="brand-mark">A<span>&</span>W</span><span><span class="brand-name">Architektura & Wnętrza</span><br><span class="brand-caption">Monika Kowalewska</span></span></a><nav class="footer-nav" aria-label="Nawigacja w stopce"><a href="#o-mnie">O mnie</a><a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">Proces</a><a href="#kontakt">Kontakt</a></nav></div>
   <div class="footer-bottom"><span>© <span id="year">2026</span> Architektura & Wnętrza Monika Kowalewska</span><span>Autorska pracownia projektowa / Białystok</span></div>
@@ -218,6 +323,17 @@
 <script>
 (function(){
   'use strict';
+
+  // Zamienne obrazy przygotowane dla projektu: po dodaniu assets/*.webp
+  // lokalne zasoby automatycznie zastąpią zdjęcia poglądowe.
+  [
+   ['.hero-image','assets/hero.webp'],
+   ['.quote-banner .banner-photo','assets/quote.webp'],
+   ['.process-art-img','assets/process.webp'],
+   ['.offer-visual','assets/offer.webp'],
+   ['.social-picture','assets/social.webp']
+  ].forEach(function(pair){var el=document.querySelector(pair[0]);if(!el)return;var pic=new Image();pic.onload=function(){el.style.backgroundImage='url("'+pair[1]+'")';};pic.src=pair[1];});
+
   var header=document.getElementById('topHeader');
   var nav=document.getElementById('siteNav');
   var menu=document.getElementById('menuToggle');
@@ -245,8 +361,7 @@
   viewport.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-dragX;dragX=e.clientX;position-=dx;normalize();paint();});
   function endDrag(e){if(!drag)return;drag=false;paused=viewport.matches(':hover');try{viewport.releasePointerCapture(e.pointerId)}catch(err){}}
   viewport.addEventListener('pointerup',endDrag);viewport.addEventListener('pointercancel',endDrag);window.addEventListener('resize',function(){normalize();paint();});
-  document.getElementById('projectsPrev').addEventListener('click',function(){position-=320;normalize();paint();});
-  document.getElementById('projectsNext').addEventListener('click',function(){position+=320;normalize();paint();});
+  viewport.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();position+=(e.key==='ArrowRight'?340:-340);normalize();paint();}});
   document.getElementById('contactForm').addEventListener('submit',function(event){
     event.preventDefault();
     var f=event.currentTarget;
