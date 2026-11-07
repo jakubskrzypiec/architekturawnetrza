@@ -420,6 +420,111 @@ body{background:#FFFBF4;color:#11120D}
  .offer-tile{padding:30px 25px 22px!important}
 }
 
+
+/* V6 — spójna paleta materiałowa i ciągłość przerywnik → realizacje
+   Typografia zawsze czarna lub biała. */
+:root{
+  --ink:#171613;
+  --white:#FFFFFF;
+  --paper:#F3EFE7;
+  --travertine:#D9CFBF;
+  --sand:#E6DDD0;
+  --smoke:#2B2520;
+  --oak:#2B2520;
+  --olive:#61584F;
+  --brass:#94816B;
+  --line:rgba(23,22,19,.16);
+}
+body,.about,.offer-v3{background:#F3EFE7!important;color:#171613!important}
+.site-header.scrolled{background:rgba(243,239,231,.97)!important;color:#171613!important}
+.portrait{background:#FFFFFF!important}
+.quote-banner{
+  background:#2B2520!important;
+  min-height:520px;
+  margin-bottom:-1px;
+}
+.quote-banner .banner-photo{
+  background-position:center 53%!important;
+  filter:brightness(.68) saturate(.65)!important;
+}
+/* Wygaszenie obrazu przy dolnej krawędzi, bez widocznego cięcia przed galerią. */
+.quote-banner::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-1!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(to bottom,
+      rgba(43,37,32,.02) 0%,
+      rgba(43,37,32,.10) 45%,
+      rgba(43,37,32,.72) 80%,
+      #2B2520 100%),
+    linear-gradient(to right,
+      rgba(43,37,32,.32) 0%,transparent 72%)!important;
+}
+.quote-content{position:relative;z-index:2!important}
+.quote-content h2{color:#FFFFFF!important}
+.quote-content .eyebrow{color:#FFFFFF!important}
+.quote-content:after{background:#FFFFFF!important}
+.projects{
+  background:#2B2520!important;
+  color:#FFFFFF!important;
+  padding-top:112px!important;
+}
+.projects-header h2,.projects-header p{color:#FFFFFF!important}
+.project-card{background:#FFFFFF!important;color:#171613!important}
+.project-photo{background:#FFFFFF!important}
+.project-meta h3,.project-meta span{color:#171613!important}
+.offer-v3-header h2,.offer-v3-header p{color:#171613!important}
+.offer-tile{
+  background:#FFFEFB!important;
+  color:#171613!important;
+  border:1px solid rgba(43,37,32,.12)!important;
+  box-shadow:0 15px 35px rgba(43,37,32,.04)!important;
+}
+.offer-tile::before{background:#94816B!important}
+.offer-tile-rule{background:rgba(43,37,32,.24)!important}
+.process{background:#2B2520!important}
+.process-copy{background:#4C4239!important;color:#FFFFFF!important}
+.process-art{background:#2B2520!important}
+.testimonials{background:#E6DDD0!important;color:#171613!important}
+.review{background:#F3EFE7!important;color:#171613!important;border:1px solid rgba(43,37,32,.09)!important}
+.contact{background:#E6DDD0!important;color:#171613!important}
+.contact .field input,.contact .field textarea,.contact .field select{color:#171613!important;border-bottom:1px solid rgba(23,22,19,.52)!important}
+.contact .field input::placeholder,.contact .field textarea::placeholder{color:#171613!important;opacity:.62}
+.contact .send-btn{background:#2B2520!important;border-color:#2B2520!important;color:#FFFFFF!important}
+.contact .send-btn:hover{background:transparent!important;color:#171613!important}
+.contact-details a{color:#171613!important}
+/* Zamiast rozmytego 11 KB social-v5: pełniejszy, 44 KB kadr social-clean.
+   Bez rozjaśniających nakładek, bez sztucznego podziału obrazu. */
+.social-showcase{
+  background-color:#D9CFBF!important;
+  background-image:url('assets/social-clean.webp')!important;
+  background-position:center 49%!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+.social-showcase::before,.social-showcase::after{content:none!important;display:none!important}
+.social-picture,.social-picture-shadow{background:none!important}
+.social-copy{color:#171613!important}
+.social-copy .eyebrow,
+.social-copy p,
+.social-copy h2,
+.social-copy .social-note,
+.social-copy .social-item{color:#171613!important}
+.social-showcase .social-item{border-color:rgba(23,22,19,.38)!important}
+.site-footer{background:#211B17!important;color:#FFFFFF!important}
+@media(max-width:900px){
+  .social-showcase{background-position:18% center!important}
+}
+@media(max-width:520px){
+  .quote-banner{min-height:420px}
+  .projects{padding-top:85px!important}
+  .social-showcase{background-position:19% center!important}
+}
+
 </style>
 </head>
 <body>
