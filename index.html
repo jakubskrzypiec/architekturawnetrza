@@ -635,6 +635,73 @@ body,.about,.offer-v3{background:#F3EFE7!important;color:#171613!important}
   .social-showcase::before,.social-showcase::after{animation:none!important}
 }
 
+
+/* V8 — jednoznaczne podpięcie nowych fotografii: listopad 2026
+   Tło realizacji jest jednolite; w pozostałych kadrach poruszają się tylko cienie. */
+.hero .hero-image {
+  background-image: url("assets/hero.webp?v=20261107-v8") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center 52% !important;
+  animation: none !important;
+  transform: none !important;
+}
+.quote-banner .banner-photo {
+  background-image: url("assets/quote.webp?v=20261107-v8") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  animation: none !important;
+  transform: none !important;
+}
+.process .process-art-img {
+  background-image: url("assets/process.webp?v=20261107-v8") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  animation: none !important;
+  transform: none !important;
+}
+.social-showcase {
+  background: #D9CFBF url("assets/social.webp?v=20261107-v8") center center / cover no-repeat !important;
+}
+.social-showcase .social-picture,
+.social-showcase .social-picture-shadow {
+  background: none !important;
+}
+/* Realizacje bez nakładek fotograficznych — dokładnie jeden spokojny kolor. */
+.projects {
+  background: #2B2520 !important;
+  background-image: none !important;
+}
+.projects::before,
+.projects::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+/* Odróżniamy wolno przemieszczające się cienie od statycznych kadrów. */
+.hero .shadow-layer::before,
+.quote-banner .shadow-layer::before,
+.process-art::before,
+.social-showcase::before {
+  animation-play-state: running !important;
+}
+.hero .shadow-layer::after,
+.quote-banner .shadow-layer::after,
+.process-art .process-shadow-leaves,
+.social-showcase::after {
+  animation-play-state: running !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .shadow-layer::before,.hero .shadow-layer::after,
+  .quote-banner .shadow-layer::before,.quote-banner .shadow-layer::after,
+  .process-art::before,.process-art .process-shadow-leaves,
+  .social-showcase::before,.social-showcase::after {
+    animation: none !important;
+  }
+}
+
 </style>
 </head>
 <body>
