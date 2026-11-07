@@ -359,6 +359,67 @@ body{background:#FFFBF4;color:#11120D}
   .social-copy h2{font-size:clamp(39px,11vw,55px)}
 }
 
+
+/* Korekta sekcji – edycja listopad 2026. */
+.site-header{position:fixed!important;transform:translateZ(0);will-change:background-color}
+.site-header.scrolled{position:fixed!important}
+.nav-links .nav-contact{border:none!important;background:none!important;padding:0!important}
+.nav-links .nav-contact:hover{opacity:.6}
+.about-grid{align-items:stretch!important}
+.about-copy{height:580px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;max-width:none!important}
+.about-copy h2{margin:0!important;line-height:1!important}
+.about-bottom{margin-top:auto;padding-top:45px;width:100%}
+.about-bottom p:last-child{margin-bottom:0}
+.about .portrait{height:580px!important;max-height:none!important}
+.quote-banner{justify-content:flex-start!important;text-align:left!important}
+.quote-content{width:min(1440px,calc(100% - 128px))!important;max-width:none!important;margin-inline:auto!important;padding:105px 0!important;text-align:left!important}
+.quote-content:after{margin:34px 0 0!important}
+.quote-content h2,.process-copy h2{font-size:clamp(39px,4.4vw,66px)!important;line-height:1.18!important;letter-spacing:-.052em!important;font-weight:500!important}
+.quote-content .eyebrow{font-size:10px!important;letter-spacing:.22em!important}
+.projects{background:#292520!important;padding-top:120px!important;padding-bottom:140px!important}
+.projects-header{margin-bottom:58px!important}
+.marquee-track{gap:18px!important}
+.projects-header h2{line-height:1.11!important}
+.offer-v3{padding-top:125px!important;padding-bottom:137px!important}
+.offer-v3-header{margin-bottom:68px!important}
+.offer-cards{gap:22px!important}
+.offer-tile{padding:43px 31px 28px!important}
+.offer-tile-top{padding-bottom:42px}
+.offer-tile-bottom p{margin-bottom:32px!important}
+.process-art-label,.offer-v3-footnote,.reviews-disclaimer{display:none!important}
+.testimonials{padding-top:130px!important;padding-bottom:140px!important}
+.review-grid{gap:20px!important}
+.review{background:#ECE8E1!important;border:1px solid rgba(17,18,13,.085)!important}
+.contact{background:#FFFBF4!important}
+.contact-form{column-gap:22px!important;row-gap:30px!important}
+.field input,.field select,.field textarea{border-bottom-color:rgba(17,18,13,.48)!important}
+.social-showcase{background-color:#4D4138!important;background-image:url('assets/social-clean.webp')!important;background-position:center center!important}
+.social-showcase::before,.social-showcase::after{display:none!important;content:none!important}
+.social-copy{background:none!important;color:#fff!important;padding-left:clamp(40px,7vw,130px)!important}
+.social-copy .eyebrow,.social-copy p,.social-copy h2,.social-copy .social-note,.social-copy .social-item{color:#fff!important}
+.social-showcase .social-item{border-color:rgba(255,255,255,.5)!important}
+.social-copy h2{font-size:clamp(43px,4.4vw,66px)!important;letter-spacing:-.052em!important}
+@media(max-width:900px){
+ .about-copy{height:auto!important;min-height:0!important}
+ .about-bottom{padding-top:45px}
+ .about .portrait{height:490px!important}
+ .quote-content{width:calc(100% - 80px)!important}
+ .offer-cards{gap:18px!important}
+ .social-showcase{background-position:20% center!important}
+}
+@media(max-width:520px){
+ .about .portrait{height:360px!important}
+ .about-bottom{padding-top:32px}
+ .quote-content{width:calc(100% - 40px)!important;padding:78px 0!important}
+ .quote-content h2,.process-copy h2{font-size:clamp(34px,9vw,48px)!important}
+ .projects{padding-top:80px!important;padding-bottom:100px!important}
+ .projects-header{margin-bottom:34px!important}
+ .marquee-track{gap:12px!important}
+ .offer-v3{padding-top:85px!important;padding-bottom:95px!important}
+ .offer-v3-header{margin-bottom:40px!important}
+ .offer-tile{padding:30px 25px 22px!important}
+}
+
 </style>
 </head>
 <body>
@@ -371,7 +432,7 @@ body{background:#FFFBF4;color:#11120D}
      <span><span class="brand-name">Architektura & Wnętrza</span><br><span class="brand-caption">Monika Kowalewska</span></span>
    </a>
    <nav class="nav-links" id="siteNav" aria-label="Nawigacja główna">
-    <a href="#o-mnie">O mnie</a><a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">Proces</a><a href="#opinie">Opinie</a><a class="nav-contact" href="#kontakt">Kontakt &nbsp;↗</a>
+    <a href="#o-mnie">O mnie</a><a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">Proces</a><a href="#opinie">Opinie</a><a class="nav-contact" href="#kontakt">Kontakt</a>
    </nav>
    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Otwórz menu" id="menuToggle">☰</button>
  </div>
@@ -392,8 +453,10 @@ body{background:#FFFBF4;color:#11120D}
  <div class="container about-grid">
   <div class="about-copy reveal">
    <h2 id="about-heading">O mnie</h2>
+   <div class="about-bottom">
    <p>Nazywam się Monika Kowalewska. Jestem absolwentką Wydziału Architektury i Urbanistyki Politechniki Białostockiej. Prowadzę autorską pracownię zajmującą się kompleksowym projektowaniem wnętrz.</p>
    <p>Każdy projekt to dla mnie nowa historia i wyzwanie, do którego podchodzę z zaangażowaniem. Łączę kreatywne podejście ze zrozumieniem potrzeb klientów, dbając o funkcjonalność, estetykę i jakość rozwiązań.</p>
+   </div>
   </div>
   <div class="portrait reveal" role="img" aria-label="Tutaj będzie zdjęcie Moniki Kowalewskiej">
    <span class="portrait-label">Tu będzie zdjęcie klientki</span>
@@ -433,11 +496,11 @@ body{background:#FFFBF4;color:#11120D}
    <article class="offer-tile reveal"><div class="offer-tile-top"><span class="offer-tile-number">02</span><span class="offer-tile-tag">Materiały i przestrzeń</span><h3>Projekt koncepcyjny</h3></div><div class="offer-tile-bottom"><p>Spójna wizja wnętrza, proponowana kolorystyka, dobór materiałów oraz kierunek estetyczny dopasowany do Ciebie.</p><span class="offer-tile-rule"></span><a href="#kontakt" class="offer-tile-link" aria-label="Zapytaj o projekt koncepcyjny">Zapytaj o zakres <span aria-hidden="true">↗</span></a></div></article>
    <article class="offer-tile reveal"><div class="offer-tile-top"><span class="offer-tile-number">03</span><span class="offer-tile-tag">Od wizji do wykonania</span><h3>Projekt kompleksowy</h3></div><div class="offer-tile-bottom"><p>Całościowe opracowanie projektu — od koncepcji po dokumentację niezbędną do sprawnej realizacji wnętrza.</p><span class="offer-tile-rule"></span><a href="#kontakt" class="offer-tile-link" aria-label="Zapytaj o projekt kompleksowy">Zapytaj o zakres <span aria-hidden="true">↗</span></a></div></article>
   </div>
-  <p class="offer-v3-footnote">Koncepcyjny podział zakresów usług — do potwierdzenia z pracownią.</p>
+  
  </div>
 </section>
 <section class="process" id="proces" aria-labelledby="process-heading">
-  <div class="process-art"><div class="process-art-img" aria-hidden="true"></div><div class="process-shadow-leaves" aria-hidden="true"></div><span class="process-art-label">Od wizji do przestrzeni &nbsp;↗</span></div>
+  <div class="process-art"><div class="process-art-img" aria-hidden="true"></div><div class="process-shadow-leaves" aria-hidden="true"></div></div>
   <div class="process-copy"><div class="eyebrow">04 / Proces projektowy</div><h2 id="process-heading">Jak wygląda<br>nasza współpraca?</h2>
    <ol class="process-list">
      <li><span class="num">01</span><div><h3>Poznanie potrzeb</h3><p>Rozmowa, analiza oczekiwań, stylu życia i budżetu.</p></div></li>
@@ -453,7 +516,7 @@ body{background:#FFFBF4;color:#11120D}
      <article class="review reveal"><div class="review-mark" aria-hidden="true">“</div><blockquote>Współpraca z taką osobą to przyjemność. Moje wysokie rekomendacje.</blockquote><strong>Celina B.</strong></article>
      <article class="review reveal"><div class="review-mark" aria-hidden="true">“</div><blockquote>Bardzo szybka realizacja, słucha wskazówek i jest kontaktowa.</blockquote><strong>Monika B.</strong></article>
      <article class="review reveal"><div class="review-mark" aria-hidden="true">“</div><blockquote>Doskonała współpraca i do tego: terminowość, elastyczność, pomysłowość.</blockquote><strong>Ewa</strong></article>
-   </div><p class="reviews-disclaimer">Wybrane krótkie fragmenty referencji opublikowanych na dotychczasowej stronie pracowni.</p>
+   </div>
   </div>
 </section>
 <section class="contact" id="kontakt" aria-labelledby="contact-heading">
