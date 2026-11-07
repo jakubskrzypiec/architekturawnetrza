@@ -525,6 +525,116 @@ body,.about,.offer-v3{background:#F3EFE7!important;color:#171613!important}
   .social-showcase{background-position:19% center!important}
 }
 
+
+/* V7 — nowe kadry fotograficzne + animowane CIENIE, bez poświaty */
+.hero .hero-image,.quote-banner .banner-photo,.process-art-img{
+  animation:none!important;transform:none!important;
+}
+.hero .light-beam,.light-beam{display:none!important}
+/* Tylko ciemne, delikatnie przesuwające się cienie okien i liści. */
+.hero .shadow-layer,.quote-banner .shadow-layer{
+  position:absolute!important;inset:0!important;
+  z-index:0!important;opacity:1!important;
+  background:none!important;filter:none!important;
+  overflow:hidden!important;pointer-events:none!important;
+  mix-blend-mode:multiply!important;animation:none!important;
+}
+.hero .shadow-layer::before,.quote-banner .shadow-layer::before{
+  content:"";position:absolute;inset:-32% -37%;
+  background:linear-gradient(110deg,
+    transparent 0 18%,
+    rgba(14,10,7,.38) 21% 24%,
+    transparent 27% 42%,
+    rgba(14,10,7,.30) 45% 48%,
+    transparent 51% 66%,
+    rgba(14,10,7,.27) 69% 71%,
+    transparent 75%);
+  filter:blur(14px)!important;
+  transform-origin:center;
+  animation:awWindowShadow 19s cubic-bezier(.37,0,.63,1) infinite alternate!important;
+  opacity:.65!important;
+}
+.hero .shadow-layer::after,.quote-banner .shadow-layer::after{
+  content:"";position:absolute;inset:-20%;
+  background:
+    radial-gradient(ellipse 5% 12% at 68% 24%,rgba(12,10,6,.32) 0 73%,transparent 100%),
+    radial-gradient(ellipse 6% 11% at 76% 30%,rgba(12,10,6,.30) 0 73%,transparent 100%),
+    radial-gradient(ellipse 5% 13% at 83% 18%,rgba(12,10,6,.28) 0 73%,transparent 100%),
+    radial-gradient(ellipse 5% 12% at 60% 18%,rgba(12,10,6,.30) 0 73%,transparent 100%),
+    radial-gradient(ellipse 6% 12% at 88% 35%,rgba(12,10,6,.27) 0 73%,transparent 100%);
+  filter:blur(19px)!important;
+  transform-origin:75% 23%;
+  animation:awLeafShadow 12s ease-in-out infinite alternate!important;
+  opacity:.56!important;
+}
+.process-art{isolation:isolate!important}
+.process-art::before{
+  animation:awWindowShadow 19s cubic-bezier(.37,0,.63,1) infinite alternate!important;
+  opacity:.42!important;
+  filter:blur(15px)!important;
+}
+.process-art .process-shadow-leaves{
+  animation:awLeafShadow 12s ease-in-out infinite alternate!important;
+  opacity:.52!important;filter:blur(18px)!important;
+}
+.social-showcase{
+  isolation:isolate!important;position:relative!important;
+  background-image:url('assets/social.webp')!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-color:#51453A!important;
+}
+.social-showcase::before{
+  content:""!important;display:block!important;
+  position:absolute!important;inset:-17%!important;
+  z-index:0!important;pointer-events:none!important;
+  background:linear-gradient(111deg,transparent 0 19%,rgba(16,11,8,.30) 24% 27%,transparent 32% 60%,rgba(16,11,8,.20) 65% 69%,transparent 73%)!important;
+  opacity:.42!important;filter:blur(18px)!important;
+  mix-blend-mode:multiply!important;
+  animation:awWindowShadow 20s ease-in-out infinite alternate!important;
+}
+.social-showcase::after{
+  content:""!important;display:block!important;
+  position:absolute!important;inset:-12%!important;
+  z-index:0!important;pointer-events:none!important;
+  background:radial-gradient(ellipse 8% 14% at 42% 23%,rgba(16,11,8,.33),transparent 90%),
+             radial-gradient(ellipse 9% 16% at 48% 37%,rgba(16,11,8,.25),transparent 90%)!important;
+  opacity:.45!important;filter:blur(15px)!important;
+  animation:awLeafShadow 14s ease-in-out infinite alternate!important;
+}
+.social-showcase .social-copy{position:relative!important;z-index:3!important;color:#171613!important}
+.social-showcase .social-picture{position:relative!important;z-index:1!important;background:none!important}
+.social-showcase .social-copy h2,
+.social-showcase .social-copy p,
+.social-showcase .social-copy .eyebrow,
+.social-showcase .social-copy .social-note,
+.social-showcase .social-copy .social-item{color:#171613!important}
+.social-showcase .social-item{border-color:rgba(23,22,19,.4)!important}
+.projects{position:relative!important;isolation:isolate!important}
+.projects::before{
+  content:"";position:absolute;z-index:-1;inset:0 0 auto;height:295px;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(43,37,32,.55),#2B2520 98%),url('assets/projects-banner.webp') center 54%/cover no-repeat;
+  opacity:.30;
+}
+@keyframes awWindowShadow{
+  0%{transform:translate3d(-5%,2%,0) rotate(-1.5deg)}
+  100%{transform:translate3d(6%,-2%,0) rotate(1.5deg)}
+}
+@keyframes awLeafShadow{
+  0%{transform:translate3d(-2%,1.5%,0) rotate(-5deg)}
+  100%{transform:translate3d(3%,-1.5%,0) rotate(4deg)}
+}
+@media(max-width:800px){
+  .social-showcase{background-position:18% center!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .shadow-layer::before,.hero .shadow-layer::after,
+  .quote-banner .shadow-layer::before,.quote-banner .shadow-layer::after,
+  .process-art::before,.process-art .process-shadow-leaves,
+  .social-showcase::before,.social-showcase::after{animation:none!important}
+}
+
 </style>
 </head>
 <body>
