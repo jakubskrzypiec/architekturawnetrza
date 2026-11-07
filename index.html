@@ -319,6 +319,46 @@ body{background:#FFFBF4;color:#11120D}
  .process-art:before,.process-art .process-shadow-leaves{animation:none!important}
 }
 
+
+/* Social wall v4: jedna czysta fotografia. Lewa polowa jest prawdziwa jasna sciana;
+   bez filtra, bez gradientowej mgly, bez animacji cieni. */
+.social-showcase{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  position:relative;
+  isolation:isolate;
+  min-height:620px;
+  background-color:#D8CFBC!important;
+  background-image:url('assets/social-clean.webp')!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+}
+.social-showcase::before,.social-showcase::after{content:none!important;display:none!important}
+.social-copy{
+  background:none!important;
+  padding:clamp(70px,7.2vw,125px) clamp(45px,6.5vw,120px)!important;
+  color:#11120D!important;
+  align-self:center;
+}
+.social-picture{background:none!important;min-height:620px!important}
+.social-picture-shadow{display:none!important;animation:none!important}
+.social-showcase .social-links{max-width:460px}
+@media(max-width:800px){
+  .social-showcase{
+    grid-template-columns:1fr!important;
+    background-position:16% center!important;
+    min-height:600px;
+  }
+  .social-copy{padding:75px 32px!important;max-width:590px}
+  .social-picture{display:none!important}
+}
+@media(max-width:520px){
+  .social-showcase{background-position:12% center!important;min-height:600px}
+  .social-copy{padding:70px 25px!important}
+  .social-copy h2{font-size:clamp(39px,11vw,55px)}
+}
+
 </style>
 </head>
 <body>
@@ -462,8 +502,7 @@ body{background:#FFFBF4;color:#11120D}
    ['.hero-image','assets/hero.webp'],
    ['.quote-banner .banner-photo','assets/quote.webp'],
    ['.process-art-img','assets/process.webp'],
-   ['.offer-visual','assets/offer.webp'],
-   ['.social-picture','assets/social.webp']
+   ['.offer-visual','assets/offer.webp']
   ].forEach(function(pair){var el=document.querySelector(pair[0]);if(!el)return;var pic=new Image();pic.onload=function(){el.style.backgroundImage='url("'+pair[1]+'")';};pic.src=pair[1];});
 
   var header=document.getElementById('topHeader');
