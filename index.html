@@ -185,7 +185,141 @@ body{background:#FFFBF4;color:#11120D}
 @media(max-width:520px){.hero-content-minimal{padding-bottom:70px}.hero-content-minimal .hero-actions{gap:9px}.hero-content-minimal .btn{min-width:0;padding:16px 15px;font-size:9px}.about-copy h2{font-size:62px}.portrait{height:355px}.quote-banner{min-height:375px}.projects{padding:90px 0}.projects-header h2{font-size:50px}.project-card{width:255px;height:345px}.project-meta{padding:16px 12px}.project-meta .project-category{font-size:12px}.offer-visual{min-height:370px}.offer-lines{padding:52px 24px}.offer-line{grid-template-columns:33px 1fr 18px;gap:8px}.offer-line h3{font-size:20px}.social-copy{padding:70px 24px}.social-copy h2{font-size:52px}.social-picture{min-height:350px}}
 @media(prefers-reduced-motion:reduce){.offer-visual-shadow,.social-picture-shadow{animation:none!important}}
 
-  </style>
+  
+/* V3 — precyzyjny ruch wyłącznie CIENI; bez nakładek typu glow i poświat. */
+.hero .light-beam{display:none!important}
+.hero .hero-image,.quote-banner .banner-photo,.process-art-img{animation:none!important;transform:none!important}
+.hero .shadow-layer,.quote-banner .shadow-layer{
+  position:absolute!important;inset:0!important;z-index:-2!important;
+  opacity:1!important;mix-blend-mode:multiply!important;
+  background:none!important;filter:none!important;animation:none!important;
+  pointer-events:none!important;overflow:hidden;
+}
+/* Miękki, rozpoznawalny cień ram okiennych; przesuwa się jak światło słoneczne. */
+.hero .shadow-layer::before,.quote-banner .shadow-layer::before,.process-art::before{
+  content:"";position:absolute;inset:-26% -32%;
+  background:linear-gradient(109deg,
+    transparent 0%,
+    rgba(1,3,1,.01) 15%,
+    rgba(1,3,1,.46) 17.4%,
+    rgba(1,3,1,.46) 20.4%,
+    transparent 22.7%,
+    transparent 40%,
+    rgba(1,3,1,.37) 42.5%,
+    rgba(1,3,1,.39) 45%,
+    transparent 47%,
+    transparent 66%,
+    rgba(1,3,1,.27) 68%,
+    rgba(1,3,1,.27) 70%,
+    transparent 73%);
+  filter:blur(9px);
+  transform-origin:center center;
+  animation:architectureShadowShift 17s ease-in-out infinite alternate!important;
+  opacity:.82;
+  pointer-events:none;
+}
+/* Nieregularny cień liści, jako oddzielna warstwa o innej prędkości ruchu. */
+.hero .shadow-layer::after,.quote-banner .shadow-layer::after,.process-art .process-shadow-leaves{
+  content:"";position:absolute;inset:-15%;
+  background:
+    radial-gradient(ellipse 3.7% 10% at 66% 22%,rgba(4,6,3,.5) 0 82%,transparent 100%),
+    radial-gradient(ellipse 3.4% 12% at 72% 28%,rgba(4,6,3,.45) 0 82%,transparent 100%),
+    radial-gradient(ellipse 4% 9% at 78% 17%,rgba(4,6,3,.42) 0 82%,transparent 100%),
+    radial-gradient(ellipse 4% 12% at 83% 31%,rgba(4,6,3,.38) 0 82%,transparent 100%),
+    radial-gradient(ellipse 3% 8% at 60% 33%,rgba(4,6,3,.36) 0 82%,transparent 100%),
+    radial-gradient(ellipse 4% 9% at 57% 22%,rgba(4,6,3,.38) 0 82%,transparent 100%),
+    radial-gradient(ellipse 3.8% 12% at 89% 22%,rgba(4,6,3,.35) 0 82%,transparent 100%);
+  filter:blur(12px);opacity:.78;
+  transform-origin:80% 10%;
+  animation:leafShadowSway 10s ease-in-out infinite alternate!important;
+  pointer-events:none;
+}
+@keyframes architectureShadowShift{
+  0%{transform:translate3d(-4%,1%,0) rotate(-2deg)}
+  100%{transform:translate3d(7%,-3%,0) rotate(1deg)}
+}
+@keyframes leafShadowSway{
+  0%{transform:translate3d(-3%,2%,0) rotate(-4deg) scale(1)}
+  100%{transform:translate3d(3%,-1%,0) rotate(4deg) scale(1.04)}
+}
+.quote-banner .shadow-layer{z-index:-1!important}
+.quote-banner .shadow-layer::before{opacity:.95}
+.process-art:before{
+  inset:-26% -32%!important;z-index:2!important;
+  opacity:.75!important;filter:blur(9px)!important;
+  animation:architectureShadowShift 17s ease-in-out infinite alternate!important;
+}
+.process-art .process-shadow-leaves{inset:-15%;z-index:3}
+.process-art{isolation:isolate}
+/* Nagłówki — skala i pozycja zgodnie z ostatnimi uwagami. */
+.about-copy h2{font-size:clamp(45px,4.6vw,76px)!important;letter-spacing:-.057em!important;margin-bottom:36px}
+.projects-header{width:calc(100% - 96px)!important;max-width:1760px!important;margin-left:auto;margin-right:auto}
+.projects-header h2{font-size:clamp(42px,5.25vw,77px)!important;letter-spacing:-.065em!important}
+.projects-subhead{margin-bottom:5px}
+/* Oferta 4-kolumnowa: wyrównany rytm, subtelna faktura, czytelna hierarchia. */
+.offer-v3{padding:112px 0 122px;background:#FFFBF4}
+.offer-v3-header{display:flex;justify-content:space-between;align-items:end;gap:36px;margin-bottom:54px}
+.offer-v3-header h2{margin:0;font-family:var(--head);font-size:clamp(46px,5vw,82px);letter-spacing:-.063em;font-weight:500}
+.offer-v3-header p{font-size:13px;max-width:320px;margin:0 0 7px}
+.offer-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.offer-tile{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:495px;padding:42px 29px 25px;overflow:hidden;background:#fff;border:1px solid rgba(17,18,13,.075);box-shadow:0 18px 40px rgba(17,18,13,.047);transition:transform .35s ease,box-shadow .35s ease}
+.offer-tile:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:#565449;transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.offer-tile:hover{transform:translateY(-9px);box-shadow:0 25px 48px rgba(17,18,13,.085)}
+.offer-tile:hover:before{transform:scaleX(1)}
+.offer-tile-number{display:block;font-family:var(--head);font-size:34px;letter-spacing:.15em;font-weight:400;margin-bottom:30px}
+.offer-tile-tag{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;margin-bottom:22px}
+.offer-tile h3{font-family:var(--head);font-size:clamp(18px,1.5vw,26px);font-weight:500;line-height:1.3;letter-spacing:-.04em;text-transform:uppercase;margin:0}
+.offer-tile-bottom p{font-size:12px;line-height:1.95;margin-bottom:34px}
+.offer-tile-rule{display:block;height:1px;background:rgba(17,18,13,.18);margin-bottom:17px}
+.offer-tile-link{display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.offer-tile-link span{font-size:19px}
+.offer-v3-footnote{margin:24px 0 0;font-size:10px;letter-spacing:.04em}
+/* Jedna scena wnętrza dla sociali. Lewa część to ściana, nie biały panel. */
+.social-showcase{
+  position:relative;isolation:isolate;min-height:660px;
+  background:#b8aa96 url('assets/social.webp') center 49%/cover no-repeat;
+  grid-template-columns:1fr 1fr;
+}
+.social-showcase:before{
+  content:"";position:absolute;z-index:-1;inset:0;
+  background:linear-gradient(90deg,rgba(216,207,188,.88) 0%,rgba(216,207,188,.72) 42%,rgba(216,207,188,.06) 71%,transparent 100%);
+}
+.social-copy{position:relative;z-index:1;padding:clamp(65px,6vw,105px) clamp(45px,7vw,125px);color:#11120D}
+.social-copy h2{font-size:clamp(43px,4.5vw,72px)}
+.social-picture{background:none!important;min-height:580px}
+.social-picture-shadow{display:none!important}
+.social-showcase .social-item{border-color:rgba(17,18,13,.46)}
+.social-showcase .social-note{font-weight:600}
+@media(max-width:1100px){
+ .offer-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .offer-tile{min-height:405px}
+}
+@media(max-width:800px){
+ .projects-header{width:calc(100% - 40px)!important}
+ .social-showcase{grid-template-columns:1fr;min-height:580px;background-position:58% center}
+ .social-copy{padding:70px 30px;max-width:650px}
+ .social-picture{display:none}
+ .social-showcase:before{background:rgba(216,207,188,.8)}
+}
+@media(max-width:560px){
+ .projects-header h2{font-size:clamp(40px,9vw,54px)!important}
+ .offer-v3{padding:80px 0}
+ .offer-v3-header{display:block}
+ .offer-v3-header p{margin-top:18px}
+ .offer-cards{grid-template-columns:1fr;gap:12px}
+ .offer-tile{min-height:345px;padding:30px 25px 22px}
+ .offer-tile-number{margin-bottom:15px}
+ .offer-tile-bottom p{margin-bottom:22px}
+ .social-showcase{background-position:58% center}
+ .social-copy{padding:75px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero .shadow-layer::before,.hero .shadow-layer::after,
+ .quote-banner .shadow-layer::before,.quote-banner .shadow-layer::after,
+ .process-art:before,.process-art .process-shadow-leaves{animation:none!important}
+}
+
+</style>
 </head>
 <body>
 <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -205,7 +339,7 @@ body{background:#FFFBF4;color:#11120D}
 <main id="main">
 <section class="hero" id="start" aria-label="Architektura i Wnętrza — prezentacja pracowni">
  <div class="hero-image" aria-hidden="true"></div>
- <div class="light-beam" aria-hidden="true"></div>
+ 
  <div class="shadow-layer" aria-hidden="true"></div>
  <div class="hero-content hero-content-minimal">
   <div class="hero-actions">
@@ -250,22 +384,20 @@ body{background:#FFFBF4;color:#11120D}
   </div>
  </div>
 </section>
-<section class="offer" id="oferta" aria-labelledby="offer-heading">
- <div class="container offer-new-head reveal"><span class="eyebrow">03 / Oferta</span><h2 id="offer-heading">Oferta.</h2></div>
- <div class="offer-split">
-  <div class="offer-visual" role="img" aria-label="Nastrojowe wnętrze w naturalnej kolorystyce"><div class="offer-visual-shadow"></div><span>ARCHITEKTURA & WNĘTRZA</span></div>
-  <div class="offer-lines">
-   <div class="offer-lines-intro"><span class="eyebrow">Projektowanie wnętrz</span><p>Przestrzeń dopasowana do potrzeb, stylu życia i charakteru miejsca — od pierwszego pomysłu po szczegółowe rozwiązania.</p></div>
-   <article class="offer-line"><span class="offer-no">01</span><h3>Projekty wnętrz prywatnych</h3><span aria-hidden="true">↗</span></article>
-   <article class="offer-line"><span class="offer-no">02</span><h3>Projekty wnętrz komercyjnych</h3><span aria-hidden="true">↗</span></article>
-   <article class="offer-line"><span class="offer-no">03</span><h3>Dobór materiałów i wyposażenia</h3><span aria-hidden="true">↗</span></article>
-   <article class="offer-line"><span class="offer-no">04</span><h3>Nadzór autorski</h3><span aria-hidden="true">↗</span></article>
-   <a class="line-link" href="#kontakt">Zapytaj o indywidualną ofertę <span aria-hidden="true">↗</span></a>
+<section class="offer offer-v3" id="oferta" aria-labelledby="offer-heading">
+ <div class="container">
+  <header class="offer-v3-header reveal"><h2 id="offer-heading">Oferta</h2><p>Przemyślane rozwiązania dopasowane do potrzeb Twojej przestrzeni.</p></header>
+  <div class="offer-cards" aria-label="Wstępny zakres usług">
+   <article class="offer-tile reveal"><div class="offer-tile-top"><span class="offer-tile-number">00</span><span class="offer-tile-tag">Pierwsze decyzje</span><h3>Konsultacja online</h3></div><div class="offer-tile-bottom"><p>Rozmowa o potrzebach, pomysłach i możliwych rozwiązaniach dla Twojego wnętrza. Wspólnie ustalimy najlepszy kierunek.</p><span class="offer-tile-rule"></span><a href="#kontakt" class="offer-tile-link" aria-label="Zapytaj o konsultację online">Zapytaj o zakres <span aria-hidden="true">↗</span></a></div></article>
+   <article class="offer-tile reveal"><div class="offer-tile-top"><span class="offer-tile-number">01</span><span class="offer-tile-tag">Funkcja i ergonomia</span><h3>Układ funkcjonalny</h3></div><div class="offer-tile-bottom"><p>Przemyślany rozkład pomieszczeń, wyposażenia i komunikacji, który odpowiada na codzienne potrzeby domowników.</p><span class="offer-tile-rule"></span><a href="#kontakt" class="offer-tile-link" aria-label="Zapytaj o układ funkcjonalny">Zapytaj o zakres <span aria-hidden="true">↗</span></a></div></article>
+   <article class="offer-tile reveal"><div class="offer-tile-top"><span class="offer-tile-number">02</span><span class="offer-tile-tag">Materiały i przestrzeń</span><h3>Projekt koncepcyjny</h3></div><div class="offer-tile-bottom"><p>Spójna wizja wnętrza, proponowana kolorystyka, dobór materiałów oraz kierunek estetyczny dopasowany do Ciebie.</p><span class="offer-tile-rule"></span><a href="#kontakt" class="offer-tile-link" aria-label="Zapytaj o projekt koncepcyjny">Zapytaj o zakres <span aria-hidden="true">↗</span></a></div></article>
+   <article class="offer-tile reveal"><div class="offer-tile-top"><span class="offer-tile-number">03</span><span class="offer-tile-tag">Od wizji do wykonania</span><h3>Projekt kompleksowy</h3></div><div class="offer-tile-bottom"><p>Całościowe opracowanie projektu — od koncepcji po dokumentację niezbędną do sprawnej realizacji wnętrza.</p><span class="offer-tile-rule"></span><a href="#kontakt" class="offer-tile-link" aria-label="Zapytaj o projekt kompleksowy">Zapytaj o zakres <span aria-hidden="true">↗</span></a></div></article>
   </div>
+  <p class="offer-v3-footnote">Koncepcyjny podział zakresów usług — do potwierdzenia z pracownią.</p>
  </div>
 </section>
 <section class="process" id="proces" aria-labelledby="process-heading">
-  <div class="process-art"><div class="process-art-img" aria-hidden="true"></div><span class="process-art-label">Od wizji do przestrzeni &nbsp;↗</span></div>
+  <div class="process-art"><div class="process-art-img" aria-hidden="true"></div><div class="process-shadow-leaves" aria-hidden="true"></div><span class="process-art-label">Od wizji do przestrzeni &nbsp;↗</span></div>
   <div class="process-copy"><div class="eyebrow">04 / Proces projektowy</div><h2 id="process-heading">Jak wygląda<br>nasza współpraca?</h2>
    <ol class="process-list">
      <li><span class="num">01</span><div><h3>Poznanie potrzeb</h3><p>Rozmowa, analiza oczekiwań, stylu życia i budżetu.</p></div></li>
