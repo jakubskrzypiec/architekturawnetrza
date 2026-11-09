@@ -36,8 +36,12 @@
   p{line-height:1.85}
   .intro-link{display:inline-flex;gap:20px;align-items:center;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:9px}
   .intro-link:hover{gap:34px}
-  .reveal{opacity:1;transform:none}
-  .reveal.show{opacity:1;transform:none}
+  .reveal.show{animation:reveal-in .62s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0s) backwards}
+  .reveal:focus-within{animation:none}
+  .offer-card:nth-child(2),.review:nth-child(2){--reveal-delay:65ms}
+  .offer-card:nth-child(3),.review:nth-child(3){--reveal-delay:130ms}
+  .offer-card:nth-child(4){--reveal-delay:195ms}
+  @keyframes reveal-in{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
 
   /* Nawigacja: stała wysokość zapobiega przeskakiwaniu podczas przewijania. */
   .site-header{position:fixed;z-index:90;inset:0 0 auto;color:#fff;transition:color .35s,background-color .35s,box-shadow .35s}
@@ -55,15 +59,15 @@
 
   /* Cienie są oddzielnymi warstwami CSS: ruszają się, fotografie nie. */
   .shadow-photo{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;isolation:isolate}
-  .shadow-photo::before{content:"";position:absolute;inset:-38%;background:linear-gradient(110deg,transparent 0 14%,rgba(9,7,5,.37) 17% 20%,transparent 24% 42%,rgba(9,7,5,.3) 46% 49%,transparent 53% 70%,rgba(9,7,5,.23) 73% 76%,transparent 79%);filter:blur(15px);opacity:.46;animation:shadow-window 20s ease-in-out infinite alternate;mix-blend-mode:multiply}
-  .shadow-photo::after{content:"";position:absolute;inset:-30%;background:radial-gradient(ellipse 5% 12% at 63% 25%,rgba(13,10,6,.5) 0 70%,transparent 100%),radial-gradient(ellipse 4% 10% at 70% 33%,rgba(13,10,6,.4) 0 70%,transparent 100%),radial-gradient(ellipse 5% 11% at 77% 22%,rgba(13,10,6,.39) 0 70%,transparent 100%),radial-gradient(ellipse 5% 10% at 85% 31%,rgba(13,10,6,.35) 0 70%,transparent 100%),radial-gradient(ellipse 5% 12% at 59% 40%,rgba(13,10,6,.3) 0 70%,transparent 100%);filter:blur(20px);opacity:.5;animation:shadow-leaves 12s ease-in-out infinite alternate;mix-blend-mode:multiply}
-  @keyframes shadow-window{0%{transform:translate3d(-5%,2%,0) rotate(-2deg)}100%{transform:translate3d(5%,-2%,0) rotate(1.5deg)}}
+  .shadow-photo::before{content:"";position:absolute;inset:-38%;background:linear-gradient(110deg,transparent 0 17%,rgba(9,7,5,.48) 19% 22%,transparent 24% 40%,rgba(9,7,5,.45) 42% 45%,transparent 47% 65%,rgba(9,7,5,.36) 67% 70%,transparent 72%),linear-gradient(20deg,transparent 45%,rgba(9,7,5,.28) 47% 50%,transparent 52%);filter:blur(9px);opacity:.83;animation:shadow-window var(--shadow-duration,16s) ease-in-out infinite alternate;mix-blend-mode:multiply}
+  .shadow-photo::after{content:"";position:absolute;inset:-30%;background:radial-gradient(ellipse 5% 12% at 63% 25%,rgba(13,10,6,.5) 0 70%,transparent 100%),radial-gradient(ellipse 4% 10% at 70% 33%,rgba(13,10,6,.4) 0 70%,transparent 100%),radial-gradient(ellipse 5% 11% at 77% 22%,rgba(13,10,6,.39) 0 70%,transparent 100%),radial-gradient(ellipse 5% 10% at 85% 31%,rgba(13,10,6,.35) 0 70%,transparent 100%),radial-gradient(ellipse 5% 12% at 59% 40%,rgba(13,10,6,.3) 0 70%,transparent 100%);filter:blur(13px);opacity:.64;animation:shadow-leaves 13s ease-in-out infinite alternate;mix-blend-mode:multiply}
+  @keyframes shadow-window{0%{transform:translate3d(-10%,3%,0) rotate(-5deg)}100%{transform:translate3d(10%,-3%,0) rotate(4deg)}}
   @keyframes shadow-leaves{0%{transform:translate3d(-3%,1%,0) rotate(-4deg)}100%{transform:translate3d(3%,-2%,0) rotate(4deg)}}
 
   /* HERO — tylko obraz i dwa przyciski */
   .hero{position:relative;isolation:isolate;background:var(--walnut) url('./hero.webp') center 51% / cover no-repeat;color:#fff;height:100svh;min-height:640px;max-height:1100px;display:flex;align-items:flex-end;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to bottom,rgba(18,22,17,.62),transparent 31%,transparent 56%,rgba(18,22,17,.62))}
-  .hero .shadow-photo{opacity:.8}
+  .hero .shadow-photo{opacity:.88;--shadow-duration:14s}
   .hero-buttons{position:relative;z-index:3;width:min(1600px,calc(100% - var(--gutter) - var(--gutter)));margin:0 auto;padding-bottom:clamp(65px,10vh,130px);display:flex;gap:12px;flex-wrap:wrap}
   .hero-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-width:195px;padding:18px 23px;border:1px solid #fff;background:#fff;color:var(--ink);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:background-color .25s,color .25s,transform .25s}
   .hero-btn:hover{background:transparent;color:#fff;transform:translateY(-3px)}
@@ -84,7 +88,7 @@
   /* PRZERYWNIK Z CYTATEM */
   .quote{min-height:490px;position:relative;isolation:isolate;display:flex;align-items:center;background:var(--walnut) url('./quote.webp') center 52% / cover no-repeat;color:#fff;overflow:hidden}
   .quote::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(31,25,21,.79),rgba(31,25,21,.58) 65%,rgba(31,25,21,.18))}
-  .quote .shadow-photo{z-index:0;opacity:.63}
+  .quote .shadow-photo{opacity:.76;--shadow-duration:17s}
   .quote-text{position:relative;z-index:2;padding:105px 0}
   .quote h2{font-size:clamp(39px,4.5vw,68px);line-height:1.2;margin:24px 0 27px;max-width:950px}
   .quote-rule{width:65px;height:1px;background:var(--brass);margin-top:35px}
@@ -111,8 +115,9 @@
   .offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
   .offer-card{background:#fff;border:1px solid rgba(38,35,32,.08);box-shadow:0 15px 35px rgba(51,45,41,.045);padding:40px 29px 27px;display:flex;flex-direction:column;justify-content:space-between;min-height:490px;transition:transform .35s,box-shadow .35s;position:relative;overflow:hidden}
   .offer-card::before{content:"";height:3px;position:absolute;top:0;left:0;right:0;transform:scaleX(0);transform-origin:left;background:var(--brass);transition:transform .35s}
+  .offer-card:focus-within{box-shadow:0 23px 45px rgba(51,45,41,.09)}
   .offer-card:hover{transform:translateY(-8px);box-shadow:0 23px 45px rgba(51,45,41,.09)}
-  .offer-card:hover::before{transform:scaleX(1)}
+  .offer-card:is(:hover,:focus-within)::before{transform:scaleX(1)}
   .offer-number{font-size:32px;font-weight:400;letter-spacing:.15em;margin-bottom:28px}
   .offer-label{display:block;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
   .offer h3{font-size:clamp(18px,1.65vw,26px);line-height:1.31;text-transform:uppercase;letter-spacing:-.04em;margin:0}
@@ -166,7 +171,7 @@
 
   /* SOCIALE — detal materiału z gradientem pod tekstem. */
   .social{position:relative;isolation:isolate;min-height:625px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(31,25,21,.72),rgba(31,25,21,.48) 65%,rgba(31,25,21,.16)) center / cover no-repeat, url('./social.webp') center 51% / cover no-repeat var(--walnut)}
-  .social .shadow-photo{opacity:.36;z-index:0}
+  .social .shadow-photo{opacity:.68;--shadow-duration:19s}
   .social-copy{position:relative;z-index:2;width:min(580px,48%);margin-left:var(--gutter);padding:95px 0;color:var(--white)}
   .social h2{font-size:clamp(43px,4.7vw,70px);line-height:1.15;margin:22px 0 26px}
   .social p{font-size:13px;max-width:400px;margin:0 0 30px}
@@ -218,9 +223,15 @@
     .social{min-height:590px;background-position:center, 25% center}.social-copy{width:calc(100% - var(--gutter) - var(--gutter));padding:80px 0}.social h2{font-size:49px}
     .footer-main,.footer-end{flex-direction:column;align-items:start}.footer-links{gap:17px}
   }
+  .project-card,.review{transition:background-color .25s,box-shadow .25s}
+  @media(hover:hover){
+    .marquee:not(.dragging) .project-card:hover{background:var(--ivory);box-shadow:inset 0 -3px var(--brass)}
+    .review:hover{background:var(--white);box-shadow:0 12px 28px rgba(51,45,41,.09)}
+  }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}.shadow-photo::before,.shadow-photo::after{animation:none!important}
-    .reveal{opacity:1;transform:none;transition:none}.hero-btn,.offer-card,.nav{transition:none}
+    .reveal.show{animation:none}.hero-btn,.offer-card,.offer-card::before,.project-card,.review,.nav{transition:none}
+    .hero-btn:hover,.offer-card:hover{transform:none}
   }
   </style>
 </head>
@@ -296,7 +307,7 @@
 
   <section class="process" id="proces" aria-labelledby="processTitle">
     <div class="process-visual" role="img" aria-label="Wnętrze w trawertynie i drewnie z naturalnymi cieniami"><div class="shadow-photo" aria-hidden="true"></div></div>
-    <div class="process-content"><span class="eyebrow">04 / Proces projektowy</span><h2 id="processTitle">Jak wygląda<br>nasza współpraca?</h2>
+    <div class="process-content reveal"><span class="eyebrow">04 / Proces projektowy</span><h2 id="processTitle">Jak wygląda<br>nasza współpraca?</h2>
       <ol class="process-list">
         <li><span class="step">01</span><div><h3>Poznanie potrzeb</h3><p>Rozmowa, analiza oczekiwań, stylu życia i budżetu.</p></div></li>
         <li><span class="step">02</span><div><h3>Inwentaryzacja i układ</h3><p>Pomiary oraz dopasowany do przestrzeni plan funkcjonalny.</p></div></li>
@@ -345,7 +356,7 @@
 </main>
 
 <section class="social" id="sociale" aria-labelledby="socialTitle"><div class="shadow-photo" aria-hidden="true"></div>
-  <div class="social-copy"><span class="eyebrow">Śledź mnie</span><h2 id="socialTitle">Bądź na bieżąco.</h2><p>Inspiracje, realizacje i kulisy powstawania nowych przestrzeni.</p>
+  <div class="social-copy reveal"><span class="eyebrow">Śledź mnie</span><h2 id="socialTitle">Bądź na bieżąco.</h2><p>Inspiracje, realizacje i kulisy powstawania nowych przestrzeni.</p>
     <div class="social-links"><div class="social-item"><span class="social-icon" aria-hidden="true">◎</span><span>Instagram</span><span class="social-arrow" aria-hidden="true">↗</span></div><div class="social-item"><span class="social-icon" aria-hidden="true">f</span><span>Facebook</span><span class="social-arrow" aria-hidden="true">↗</span></div></div>
     <span class="social-note">Linki do profili zostaną uzupełnione.</span>
   </div>
@@ -365,7 +376,7 @@
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
   window.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
   document.getElementById('year').textContent=String(new Date().getFullYear());
-  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));}
+  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target);}});});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));}
 
   // Płynna i bezszwowa karuzela z pauzą na najechanie, przeciąganiem oraz strzałkami klawiatury.
   const viewport=document.getElementById('projectViewport'),track=document.getElementById('projectTrack');
